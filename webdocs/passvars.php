@@ -8,7 +8,9 @@
   
   $result = exec('python3 /var/edit-reverse-proxy/edit-reverse-proxy.py "'.$listenOn.'" "'.$toProxy.'"'); // Execute edit-reverse-proxy.py with arguments listenOn and toProxy
   
-  if ($result == "Success!") {
+  $success = "Success!"
+
+  if (strcmp($result, $success) !== 0) {
     echo("
 <!DOCTYPE html>
 <html lang='en'>
