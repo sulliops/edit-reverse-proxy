@@ -45,7 +45,7 @@
                     <h1 class="mt-4">Success!</h1>
                     <p>The changes to your reverse proxy configuration have been made successfully.</p>
                     <br>
-                    <button class="btn btn-primary" onclick="goBack();">Submit</button>
+                    <button class="btn btn-primary" onclick="goBack();">Back to home page</button>
                 </div>
             </div>
         </div>
@@ -55,8 +55,8 @@
         <script src="js/scripts.js"></script>
         <!-- Custom JS -->
         <script>
-            function goBack() {
-                window.location.href = "index.php";
+            function goBack() { // Go back to home page
+                window.location.href = "index.html"; // Set URL to index.html
             }
         </script>
     </body>
