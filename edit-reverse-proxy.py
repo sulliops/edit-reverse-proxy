@@ -17,7 +17,7 @@ with open('edit-reverse-proxy.conf', 'r') as input_file:
    edited_file = input_file.readlines()
 
 listenOnPort = sys.argv[1]
-listenOnPort = listenOnPort[1:listenOnPort.length]
+listenOnPort = listenOnPort[1:len(listenOnPort)]
 
 listen_port = "listen " + listenOnPort  + ";\n"
 listen_all_port = "listen [::]:" + sys.argv[1] + ";\n"
