@@ -37,3 +37,5 @@ with open('edit-reverse-proxy.conf','w') as input_file:
     input_file.writelines(edited_file)
 
 input_file.close()
+
+print('Success!')
