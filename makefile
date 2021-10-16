@@ -11,4 +11,5 @@ build:
 	chmod 777 /etc/nginx/sites-enabled/edit-reverse-proxy.conf
 	chown -R www-data:www-data /var/log/nginx
 	chmod -R 755 /var/log/nginx
+	rm -rf /var/log/nginx/error/
 	mkdir /var/log/nginx/error/
