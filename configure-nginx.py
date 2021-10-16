@@ -29,7 +29,7 @@ except CalledProcessError as e:
 
 # Modify base nginx config file with lines enabling php
 with open('/etc/nginx/nginx.conf', 'w') as nginx_conf_file:
-    php_enabled = ['user www-data;\n', 'worker_processes auto;\n', 'pid /run/nginx.pid;\n', 'include /etc/nginx/modules-enabled/*.conf;\n', '\n', 'events {\n', 'worker_connections 768;\n','}\n', '\n', 'http {\n', '\n', 'sendfile on;\n', 'tcp_nopush on;\n', 'tcp_nodelay on;\n','keepalive_timeout 65;\n', 'types_hash_max_size 2048;\n', 'server_tokens off;\n', '\n','include /etc/nginx/mime.types;\n', 'default_type application/octet-stream;\n','\n','ssl_protocols TLSv1 TLSv1.1 TLSv1.2;\n', 'ssl_prefer_server_ciphers on;\n', '\n','access_log /var/log/nginx/access.log;\n', 'error_log /var/log/nginx/error/log;\n', '\n','gzip on;\n', '\n', 'include /etc/nginx/conf.d/*.conf;\n', 'include /etc/nginx/sites-enabled/*;\n']
+    php_enabled = ['user www-data;\n', 'worker_processes auto;\n', 'pid /run/nginx.pid;\n', 'include /etc/nginx/modules-enabled/*.conf;\n', '\n', 'events {\n', 'worker_connections 768;\n','}\n', '\n', 'http {\n', '\n', 'sendfile on;\n', 'tcp_nopush on;\n', 'tcp_nodelay on;\n','keepalive_timeout 65;\n', 'types_hash_max_size 2048;\n', 'server_tokens off;\n', '\n','include /etc/nginx/mime.types;\n', 'default_type application/octet-stream;\n','\n','ssl_protocols TLSv1 TLSv1.1 TLSv1.2;\n', 'ssl_prefer_server_ciphers on;\n', '\n','access_log /var/log/nginx/access.log;\n', 'error_log /var/log/nginx/error/log;\n', '\n','gzip on;\n', '\n', 'include /etc/nginx/conf.d/*.conf;\n', 'include /etc/nginx/sites-enabled/*;\n', '}\n']
     nginx_conf_file.writelines(php_enabled)
 # Close file
 nginx_conf_file.close()
