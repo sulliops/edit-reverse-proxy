@@ -16,7 +16,10 @@ edited_file = []
 with open('edit-reverse-proxy.conf', 'r') as input_file:
    edited_file = input_file.readlines()
 
-listen_port = "listen " + sys.argv[1]  + ";\n"
+listenOnPort = sys.argv[1]
+listenOnPort = listenOnPort[1:listenOnPort.length]
+
+listen_port = "listen " + listenOnPort  + ";\n"
 listen_all_port = "listen [::]:" + sys.argv[1] + ";\n"
 proxy_port = "proxy_pass http://127.0.0.1:" + sys.argv[2] + ";\n"
 
