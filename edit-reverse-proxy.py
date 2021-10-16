@@ -26,7 +26,7 @@ edited_file[lineNum2] = listen_all_port
 edited_file[lineNum3] = proxy_port 
 
 # read array lines back into file 
-with open('edit-reverse.proxy.conf','w') as input_file: 
+with open('edit-reverse-proxy.conf','w') as input_file: 
     input_file.writelines(edited_file)
 
 input_file.close()
