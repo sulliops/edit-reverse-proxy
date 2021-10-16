@@ -34,9 +34,34 @@ A front-end "success" page is also displayed.
 
 This script gets the current contents of `edit-reverse-proxy.conf`, converts the contents to a line-by-line array, then modifies the contents of certain lines to match user input. The script then writes the array line-by-line back to `edit-reverse-proxy.conf`.
 
+# Usage
+
+`python3` must be installed:
+
+```
+apt-get install python3
+```
+
+Clone the repository to a local folder and `cd`:
+
+```
+git clone https://github.com/sulliops/edit-reverse-proxy.git
+cd edit-reverse-proxy/
+```
+
+Run the makefile:
+
+```
+make build
+```
+
+Visit the newly-created web server at `http://localhost:80` and begin interacting with the scripts.
+
 # Important note
 
-This script is currently not functional when attempting to proxy anything over port 80, because the front-end for this project runs on port 80. This can be changed by a more advanced user, but without further configuration the script will break NGINX if port 80 is specified first.
+This script will destroy any changes made to the `default` NGINX configuration.
+
+In addition, this script is currently not functional when attempting to proxy anything over port 80, because the front-end for this project runs on port 80. This can be changed by a more advanced user, but without further configuration the script will break NGINX if port 80 is specified first.
 
 # Contributors
 
