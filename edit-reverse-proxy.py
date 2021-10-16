@@ -16,12 +16,14 @@ edited_file = []
 with open('edit-reverse-proxy.conf', 'r') as input_file:
    edited_file = input_file.readlines()
 
-listenOnPort = sys.argv[1]
-listenOnPort = listenOnPort[1:len(listenOnPort)]
+listenOn = sys.argv[1]
+listenOn = listenOn[1:len(listenOn)-1]
+toProxy = sys.argv[2]
+toProxy = toProxy[1:len(toProxy)-1]
 
-listen_port = "listen " + listenOnPort  + ";\n"
-listen_all_port = "listen [::]:" + sys.argv[1] + ";\n"
-proxy_port = "proxy_pass http://127.0.0.1:" + sys.argv[2] + ";\n"
+listen_port = "listen " + listenOn  + ";\n"
+listen_all_port = "listen [::]:" + listenOn + ";\n"
+proxy_port = "proxy_pass http://127.0.0.1:" + toProxy + ";\n"
 
 #change lines that need to be changed using array indexing
 edited_file[lineNum1] = listen_port
