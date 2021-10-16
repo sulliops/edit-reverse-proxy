@@ -53,14 +53,14 @@
         <!-- Custom JS -->
         <script>
             function sendVarsToPHP() {
-                var listenOn = document.getElementById("listenOn").value;
-                var toProxy = document.getElementById("toProxy").value;
+                var listenOn = document.getElementById("listenOn").value; // Set listenOn to the value of the first text input
+                var toProxy = document.getElementById("toProxy").value; // Set toProxy to the value of the second text input
 
-                if (listenOn == '') {
-                    listenOn = 80;
+                if (listenOn == '') { // If listenOn is blank
+                    listenOn = 80; // Set listenOn to the default port 80
                 }
 
-                window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy;
+                window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy; // Redirect to PHP script with variables as paramaters
             }
         </script>
     </body>
