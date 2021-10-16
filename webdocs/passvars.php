@@ -10,7 +10,7 @@
   
   $success = "Success!"
 
-  if (strcmp($result, $success) !== 0) {
+  if (strcmp($result, $success) == 0) {
     echo("
 <!DOCTYPE html>
 <html lang='en'>
