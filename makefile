@@ -9,3 +9,4 @@ build:
 	chmod 777 /etc/nginx/nginx.conf
 	python3 configure-nginx.py
 	chmod 777 /etc/nginx/sites-enabled/edit-reverse-proxy.conf
+	mkdir /var/log/nginx/error/
