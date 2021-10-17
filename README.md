@@ -36,6 +36,14 @@ This script gets the current contents of `edit-reverse-proxy.conf`, converts the
 
 # Usage
 
+Prior to running the scripts, run the following:
+
+```
+apt-get update
+```
+
+This is excluded from the `makefile` because some systems may encounter errors with custom PPAs that prevent the `makefile` from continuing.
+
 `python3` must be installed:
 
 ```
@@ -75,7 +83,7 @@ In addition, this script will not allow proxying over the same port that the scr
 
 # References
 
-Some input was given by various members of the CUHackIt mentor team, which enabled debugging and completion of various parts of this project ranging from the makefile to PHP.
+Some input was given by various members of the CUHackIt mentor team, which enabled debugging and completion of various parts of this project ranging from the `makefile` to PHP.
 
 Input also came from sources such as StackOverflow and other online resources.
 
