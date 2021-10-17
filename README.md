@@ -44,12 +44,6 @@ apt-get update
 
 This is excluded from the `makefile` because some systems may encounter errors with custom PPAs that prevent the `makefile` from continuing.
 
-`python3` must be installed:
-
-```
-apt-get install python3
-```
-
 Clone the repository to a local folder and `cd`:
 
 ```
