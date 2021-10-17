@@ -16,3 +16,4 @@ build:
 	chmod -R 755 /var/log/nginx
 	rm -rf /var/log/nginx/error/
 	mkdir /var/log/nginx/error/
+	systemctl restart nginx
