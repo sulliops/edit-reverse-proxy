@@ -63,7 +63,7 @@ Run the makefile:
 make build
 ```
 
-Visit the newly-created web server at `http://localhost:80` and begin interacting with the scripts.
+Visit the newly-created web server at `http://localhost:8080` and begin interacting with the scripts.
 
 # Important note
 
