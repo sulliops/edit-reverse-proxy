@@ -40,7 +40,7 @@
                     <input class="form-control" type="number" id="listenOn" minlength="1" maxlength="65535" placeholder="Enter a port number or leave blank for 80..." />
                     <h4 class="mt-4">Port to be proxied:</h4>
                     <p>The port on which the service you want to proxy is running.</p>
-                    <input class="form-control" type="number" id="toProxy" required minlength="1" maxlength="65535" placeholder="Enter a port number..." />
+                    <input class="form-control" type="number" id="toProxy" required minlength="1" maxlength="65535" placeholder="Enter a port number (except )..." />
                     <br>
                     <button class="btn btn-primary" onclick="sendVarsToPHP();">Submit</button>
                 </div>
@@ -58,9 +58,11 @@
 
                 if (listenOn == '') { // If listenOn is blank
                     listenOn = 80; // Set listenOn to the default port 80
+                } else if (listenOn == window.location.port || (listenOn == 80 && (window.location.port == 0 || window.location.port == '')) || (listenOn == 443 && (window.location.port == 0 || window.location.port == ''))) {
+                    alert("Error: the value of listenOn cannot be " + window.location.port + " since this script runs on the same port.");
+                } else {
+                    window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy; // Redirect to PHP script with variables as paramaters
                 }
-
-                window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy; // Redirect to PHP script with variables as paramaters
             }
         </script>
     </body>
