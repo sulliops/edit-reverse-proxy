@@ -52,12 +52,12 @@
         <script src="js/scripts.js"></script>
         <!-- Custom JS -->
         <script>
-            function sendVarsToPHP() {
+            function sendVarsToPHP() { // Declare sendVarsToPHP
                 var listenOn = document.getElementById("listenOn").value; // Set listenOn to the value of the first text input
                 var toProxy = document.getElementById("toProxy").value; // Set toProxy to the value of the second text input
 
-                if (toProxy == '') {
-                    alert("Error: you must enter a value for toProxy.");
+                if (toProxy == '') { // If toProxy is blank
+                    alert("Error: you must enter a value for toProxy."); // Create error message
                 } else {
                     if (listenOn == '') { // If listenOn is blank
                         listenOn = 80; // Set listenOn to the default port 80
