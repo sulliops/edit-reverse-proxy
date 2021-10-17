@@ -42,7 +42,7 @@
                     <p>The port on which the service you want to proxy is running.</p>
                     <input class="form-control" type="number" id="toProxy" required minlength="1" maxlength="65535" placeholder="Enter a port number..." />
                     <br>
-                    <button class="btn btn-primary" onclick="checkVars();">Submit</button>
+                    <button class="btn btn-primary" onclick="sendVarsToPHP();">Submit</button>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
         <script src="js/scripts.js"></script>
         <!-- Custom JS -->
         <script>
-            function checkVars() {
+            function sendVarsToPHP() {
                 var listenOn = document.getElementById("listenOn").value; // Set listenOn to the value of the first text input
                 var toProxy = document.getElementById("toProxy").value; // Set toProxy to the value of the second text input
 

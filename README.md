@@ -12,6 +12,8 @@ Below is a list of each major file and its function:
 
 The makefile runs Linux commands which copy the contents of `webdocs` and the `edit-reverse-proxy.py` script into absolute locations for use and editing, and it sets permissions for individual files so that NGINX and Python can access/modify them.
 
+**Note:** part of the `makefile`'s configuration procedure is setting the NGINX user `www-data` to `NOPASSWD` in the `/etc/sudoers` file, to enable PHP to run `edit-reverse-proxy.py` as root. This may be considered insecure, and you shouldn't use these scripts if you're concerned about this vulnerability.
+
 ### configure-nginx.py
 
 This script installs NGINX and PHP-FPM, and sets NGINX's default configuration files to enable the execution of PHP scripts on the web server. 
@@ -32,7 +34,7 @@ A front-end "success" page is also displayed.
 
 ### edit-reverse-proxy.py
 
-This script gets the current contents of `edit-reverse-proxy.conf`, converts the contents to a line-by-line array, then modifies the contents of certain lines to match user input. The script then writes the array line-by-line back to `edit-reverse-proxy.conf`.
+This script gets the current contents of `edit-reverse-proxy.conf`, converts the contents to a line-by-line array, then modifies the contents of certain lines to match user input. The script then writes the array line-by-line back to `edit-reverse-proxy.conf` and restarts the NGINX service.
 
 # Usage
 
@@ -57,13 +59,15 @@ Run the makefile:
 make build
 ```
 
+**Note:** depending on your current Linux permissions, you may need to run the above as root.
+
 Visit the newly-created web server at `http://localhost:8080` and begin interacting with the scripts.
 
 # Important note
 
 This script will destroy any changes made to the `default` NGINX configuration.
 
-In addition, this script will not allow proxying over the same port that the script runs on (default 8080). Editing `configure-nginx.py` to run the script on a port other than default will free up that port, assuming no other program tries to bind to it.
+In addition, overwriting this script's default port using `listenOn` will result in an NGINX misconfiguration; you can fix this by re-running the `makefile`, but this will destroy any modifications you've made since last running it. Editing `configure-nginx.py` to run the script on a port other than default will free up that port, assuming no other program tries to bind to it.
 
 # Contributors
 
