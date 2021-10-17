@@ -1,4 +1,6 @@
 build:
+	apt-get update
+	apt-get install nginx
 	rm -rf /var/www/html/
 	mkdir /var/www/html/
 	cp -r webdocs/* /var/www/html/
