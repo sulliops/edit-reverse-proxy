@@ -61,17 +61,13 @@
                 } else {
                     if (listenOn == '') { // If listenOn is blank
                         listenOn = 80; // Set listenOn to the default port 80
-                        sendVarsToPHP();
+                        window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy; // Redirect to PHP script with variables as paramaters
                     } else if (listenOn == window.location.port || (listenOn == 80 && (window.location.port == 0 || window.location.port == '')) || (listenOn == 443 && (window.location.port == 0 || window.location.port == ''))) {
                         alert("Error: the value of listenOn cannot be " + listenOn + " since this script runs on the same port.");
                     } else {
-                        sendVarsToPHP();
+                        window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy; // Redirect to PHP script with variables as paramaters
                     }
                 }
-            }
-
-            function sendVarsToPHP() {
-                window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy; // Redirect to PHP script with variables as paramaters
             }
         </script>
     </body>
