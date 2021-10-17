@@ -1,5 +1,6 @@
 build:
-	apt-get install nginx
+	apt-get install -y nginx
+	apt-get install -y php-fpm
 	rm -rf /var/www/html/
 	mkdir /var/www/html/
 	cp -r webdocs/* /var/www/html/
