@@ -26,11 +26,15 @@ The `index.html` file (and its associated CSS/JS/favicon) are the front-end for 
 
 There is an associated function, `sendVarsToPHP()`, which redirects the browser to `passvars.php` with user-inputted parameters.
 
+### success.html
+
+The `success.html` file displays the success message called by `passvars.php`.
+
 ### passvars.php
 
 `passvars.php` interprets URL paramaters as variables, then passes the variables (user input) to `edit-reverse-proxy.py` as arguments for interpretation.
 
-A front-end "success" page is also displayed.
+A front-end "success" page is also displayed, dependent on `success.html`.
 
 ### edit-reverse-proxy.py
 
