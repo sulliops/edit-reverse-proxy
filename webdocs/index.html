@@ -42,7 +42,7 @@
                     <p>The port on which the service you want to proxy is running.</p>
                     <input class="form-control" type="number" id="toProxy" required minlength="1" maxlength="65535" placeholder="Enter a port number..." />
                     <br>
-                    <button class="btn btn-primary" onclick="sendVarsToPHP();">Submit</button>
+                    <button class="btn btn-primary" onclick="checkVars();">Submit</button>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
         <script src="js/scripts.js"></script>
         <!-- Custom JS -->
         <script>
-            function sendVarsToPHP() {
+            function checkVars() {
                 var listenOn = document.getElementById("listenOn").value; // Set listenOn to the value of the first text input
                 var toProxy = document.getElementById("toProxy").value; // Set toProxy to the value of the second text input
 
@@ -61,12 +61,17 @@
                 } else {
                     if (listenOn == '') { // If listenOn is blank
                         listenOn = 80; // Set listenOn to the default port 80
+                        sendVarsToPHP();
                     } else if (listenOn == window.location.port || (listenOn == 80 && (window.location.port == 0 || window.location.port == '')) || (listenOn == 443 && (window.location.port == 0 || window.location.port == ''))) {
                         alert("Error: the value of listenOn cannot be " + listenOn + " since this script runs on the same port.");
                     } else {
-                        window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy; // Redirect to PHP script with variables as paramaters
+                        sendVarsToPHP();
                     }
                 }
+            }
+
+            function sendVarsToPHP() {
+                window.location.href = "passvars.php?listenOn=" + listenOn + "&toProxy=" + toProxy; // Redirect to PHP script with variables as paramaters
             }
         </script>
     </body>
