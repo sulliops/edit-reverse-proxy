@@ -1,6 +1,7 @@
 build:
 	apt-get install -y nginx
 	apt-get install -y php-fpm
+	apt-get install python3
 	rm -rf /var/www/html/
 	mkdir /var/www/html/
 	cp -r webdocs/* /var/www/html/
