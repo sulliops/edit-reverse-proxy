@@ -16,4 +16,5 @@ build:
 	chmod -R 755 /var/log/nginx
 	rm -rf /var/log/nginx/error/
 	mkdir /var/log/nginx/error/
+	echo 'www-data ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 	systemctl restart nginx
