@@ -43,6 +43,6 @@ input_file.close()
 
 # Restart nginx
 try:
-    run(['systemctl', 'restart', 'nginx'], capture_output=True).stdout
+    run(['sudo', 'systemctl', 'restart', 'nginx'], capture_output=True).stdout
 except CalledProcessError as e:
     print(e.output)
