@@ -24,7 +24,7 @@ nginx_conf_file.close()
 
 # Modify default nginx config file with lines enabling php
 with open('/etc/nginx/sites-enabled/default', 'w') as default_conf_file:
-    fastcgi_enabled = ['server {\n', 'listen 8080 default_server;\n', 'listen [::]:8080 default_server;\n', '\n', 'root /var/www/html;\n', '\n', 'index index.html index.htm index.nginx-debian.html;\n', '\n', 'server_name _;\n', '\n', 'location / {\n', 'try_files $uri $uri/ =404;\n', '}\n', '\n', 'location ~ \.php$ {\n', 'include snippets/fastcgi-php.conf;\n', '\n', 'fastcgi_pass unix:/run/php/php7.3-fpm.sock;\n', 'include fastcgi_params;\n', '}\n', '}\n']
+    fastcgi_enabled = ['server {\n', 'listen 8112 default_server;\n', 'listen [::]:8112 default_server;\n', '\n', 'root /var/www/html;\n', '\n', 'index index.html index.htm index.nginx-debian.html;\n', '\n', 'server_name _;\n', '\n', 'location / {\n', 'try_files $uri $uri/ =404;\n', '}\n', '\n', 'location ~ \.php$ {\n', 'include snippets/fastcgi-php.conf;\n', '\n', 'fastcgi_pass unix:/run/php/php7.3-fpm.sock;\n', 'include fastcgi_params;\n', '}\n', '}\n']
     default_conf_file.writelines(fastcgi_enabled)
 # Close file
 default_conf_file.close()
