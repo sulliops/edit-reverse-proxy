@@ -2,8 +2,6 @@ from subprocess import run, CalledProcessError
 import os
 import sys
 
-print(os.system('whoami'))
-
 # Change directory to /etc/nginx/sites-enabled/
 os.chdir('/etc/nginx/sites-enabled/')
 
