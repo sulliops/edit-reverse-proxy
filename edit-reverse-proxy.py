@@ -2,8 +2,8 @@ import os
 import sys
 import getpass
 
-print "Env thinks the user is [%s]" % (os.getlogin());
-print "Effective user is [%s]" % (getpass.getuser());
+print('Env thinks the user is [%s]' % (os.getlogin()))
+print('Effective user is [%s]' % (getpass.getuser()))
 
 # Change directory to /etc/nginx/sites-enabled/
 os.chdir('/etc/nginx/sites-enabled/')
