@@ -40,7 +40,7 @@ with open('edit-reverse-proxy.conf','w') as input_file:
 input_file.close()
 
 # Restart nginx
-# try:
-#     run(['systemctl', 'restart', 'nginx'], capture_output=True).stdout
-# except CalledProcessError as e:
-#     print(e.output)
+try:
+    run(['systemctl', 'restart', 'nginx'], capture_output=True).stdout
+except CalledProcessError as e:
+    print(e.output)
