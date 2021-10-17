@@ -61,7 +61,7 @@ Visit the newly-created web server at `http://localhost:80` and begin interactin
 
 This script will destroy any changes made to the `default` NGINX configuration.
 
-In addition, this script is currently not functional when attempting to proxy anything over port 80, because the front-end for this project runs on port 80. This can be changed by a more advanced user, but without further configuration the script will break NGINX if port 80 is specified first.
+In addition, this script will not allow proxying over the same port that the script runs on (default 8080). Editing `configure-nginx.py` to run the script on a port other than default will free up that port, assuming no other program tries to bind to it.
 
 # Contributors
 
@@ -78,3 +78,5 @@ In addition, this script is currently not functional when attempting to proxy an
 Some input was given by various members of the CUHackIt mentor team, which enabled debugging and completion of various parts of this project ranging from the makefile to PHP.
 
 Input also came from sources such as StackOverflow and other online resources.
+
+The template for the front-end of the script was provided by [Start Bootstrap](https://startbootstrap.com/template/simple-sidebar).
