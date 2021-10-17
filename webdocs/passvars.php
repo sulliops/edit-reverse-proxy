@@ -7,7 +7,6 @@
   $toProxy = escapeshellarg($toProxy); // Escape any special characters in toProxy
   
   $result = exec('python3 /var/edit-reverse-proxy/edit-reverse-proxy.py "'.$listenOn.'" "'.$toProxy.'"'); // Execute edit-reverse-proxy.py with arguments listenOn and toProxy
-  echo $result; // Echo result (success)
 ?>
 
 <!DOCTYPE html>

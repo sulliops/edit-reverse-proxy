@@ -2,6 +2,8 @@ from subprocess import run, CalledProcessError
 import os
 import sys
 
+print(os.system('whoami'))
+
 # Change directory to /etc/nginx/sites-enabled/
 os.chdir('/etc/nginx/sites-enabled/')
 
@@ -44,6 +46,3 @@ try:
     run(['systemctl', 'restart', 'nginx'], capture_output=True).stdout
 except CalledProcessError as e:
     print(e.output)
-
-# Print success
-print('Success!')
